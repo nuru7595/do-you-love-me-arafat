@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body{
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+background:pink;
+font-family:sans-serif;
+overflow:hidden;
+}
+.box{
+text-align:center;
+background:#fff;
+padding:30px;
+border-radius:20px;
+}
+button{
+padding:10px 20px;
+margin:10px;
+border:none;
+border-radius:20px;
+cursor:pointer;
+font-size:18px;
+}
+#yes{background:#ff4d6d;color:white;}
+#no{background:white;border:2px solid #ff4d6d;}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+<h1 id="text">Do you love me? 💖</h1>
+
+<button id="yes" onclick="yes()">হ্যাঁ 💕</button>
+<button id="no" onmouseover="move()">না</button>
+</div>
+
+<script>
+function yes(){
+document.getElementById("text").innerHTML=
+"I knew it 😘💖";
+}
+
+function move(){
+let btn=document.getElementById("no");
+
+btn.style.position="absolute";
+btn.style.left=Math.random()*80+"%";
+btn.style.top=Math.random()*80+"%";
+}
+</script>
+
+</body>
+</html>
