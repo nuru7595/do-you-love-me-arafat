@@ -1,70 +1,125 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-  <style>
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background: pink;
-      font-family: sans-serif;
-      overflow: hidden;
-    }
+<title>Friendship Request 💖</title>
 
-    .box {
-      text-align: center;
-      background: #fff;
-      padding: 30px;
-      border-radius: 20px;
-    }
+<style>
+body{
+margin:0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:#ffd6e0;
+font-family:sans-serif;
+overflow:hidden;
+}
 
-    button {
-      padding: 10px 20px;
-      margin: 10px;
-      border: none;
-      border-radius: 20px;
-      cursor: pointer;
-      font-size: 18px;
-    }
+.box{
+background:white;
+padding:30px;
+border-radius:20px;
+text-align:center;
+width:320px;
+box-shadow:0 0 20px rgba(0,0,0,.1);
+}
 
-    #yes {
-      background: #ff4d6d;
-      color: white;
-    }
+h2{
+color:#ff4d6d;
+}
 
-    #no {
-      background: white;
-      border: 2px solid #ff4d6d;
-    }
-  </style>
+button{
+padding:10px 25px;
+margin:10px;
+font-size:18px;
+border:none;
+border-radius:20px;
+cursor:pointer;
+}
+
+#yes{
+background:#ff4d6d;
+color:white;
+}
+
+#no{
+background:white;
+border:2px solid #ff4d6d;
+}
+</style>
 </head>
 
 <body>
 
-  <div class="box">
-    <h1 id="text">Do you love me? 💖</h1>
+<div class="box">
+<h2 id="text">
+তুমি কি আমার বন্ধুত্ব একসেপ্ট করবা? 🥺💖
+</h2>
 
-    <button id="yes" onclick="yes()">হ্যাঁ 💕</button>
-    <button id="no" onmouseover="move()">না</button>
-  </div>
+<button id="yes" onclick="yesClick()">
+Yes 💖
+</button>
 
-  <script>
-    function yes() {
-      document.getElementById("text").innerHTML =
-        "I knew it 😘💖";
-    }
+<button id="no" onclick="noClick()">
+No 😶
+</button>
+</div>
 
-    function move() {
-      let btn = document.getElementById("no");
+<script>
 
-      btn.style.position = "absolute";
-      btn.style.left = Math.random() * 80 + "%";
-      btn.style.top = Math.random() * 80 + "%";
-    }
-  </script>
+let messages = [
+
+"একবার ভেবে দেখো না 🥺",
+
+"এত সহজে না বলো না 😭",
+
+"Please বন্ধুত্বটা একসেপ্ট করো 💖",
+
+"আমি কিন্তু অপেক্ষা করতেছি 😔",
+
+"তুমি না বললে কষ্ট পাব 😢",
+
+"আরেকবার চিন্তা করো প্লিজ 🥹",
+
+"এত রাগ কইরো না 😭💔",
+
+"বন্ধু হলে মন্দ হতো নাকি 😶",
+
+"আচ্ছা শেষবার জিজ্ঞেস করলাম 🥺💖"
+
+];
+
+let i = 0;
+
+function noClick(){
+
+document.getElementById("text").innerHTML =
+messages[i];
+
+i++;
+
+if(i >= messages.length){
+i = 0;
+}
+
+let btn = document.getElementById("no");
+
+btn.style.position = "absolute";
+btn.style.left = Math.random()*80 + "%";
+btn.style.top = Math.random()*80 + "%";
+}
+
+function yesClick(){
+
+document.getElementById("text").innerHTML =
+"ইয়েেে! এখন থেকে আমরা বন্ধু 😍💖";
+
+document.getElementById("no").style.display="none";
+
+document.getElementById("yes").innerHTML="Best Friend 💕";
+}
+
+</script>
 
 </body>
-
 </html>
